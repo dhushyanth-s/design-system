@@ -7,3 +7,6 @@ export function ExampleButton() {
 
 export { Button } from "./Buttons/Buttons";
 export type { ButtonProps } from "./Buttons/Buttons";
+
+export { Switch } from "./Switches/Switches";
+export type { SwitchProps } from "./Switches/Switches";

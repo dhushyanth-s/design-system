@@ -34,6 +34,9 @@
   "typings": "./dist/main.d.ts",
   "types": "./dist/main.d.ts",
   "dependencies": {
-    "@stitches/react": "^0.1.9"
+    "@headlessui/react": "^1.2.0",
+    "@iconicicons/react": "^1.5.0",
+    "@stitches/react": "^0.1.9",
+    "framer-motion": "^4.1.17"
   }
 }
