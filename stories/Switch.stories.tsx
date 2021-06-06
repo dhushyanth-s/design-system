@@ -1,20 +1,41 @@
-import { Meta, Story } from "@storybook/react";
-import React from "react";
-import { Switch, SwitchProps } from "../lib/main";
+import { Meta, Story } from '@storybook/react'
+import React from 'react'
+import { Switch, SwitchProps } from '../lib/main'
+import { WifiIcon } from '@iconicicons/react'
 
 export default {
-  title: "Switch",
+  title: 'Switch',
   component: Switch,
   argTypes: {
     onChange: {
-      action: "Clicked",
+      action: 'Switched',
     },
   },
-} as Meta;
+} as Meta
 
-const Template: Story<SwitchProps> = (props) => <Switch {...props} />;
+const Template: Story<SwitchProps> = (props) => <Switch {...props} />
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Label 1",
-};
+export const NoLabel = Template.bind({})
+NoLabel.args = {}
+
+export const Labelled = Template.bind({})
+Labelled.args = {
+  label: 'Label',
+}
+
+export const PlainIcon = Template.bind({})
+PlainIcon.args = {
+  icon: <WifiIcon />,
+}
+
+export const LabelledIconSwitch = Template.bind({})
+LabelledIconSwitch.args = {
+  label: 'I have icon',
+  icon: <WifiIcon />,
+}
+
+export const InnerLabelledIconSwitch = Template.bind({})
+LabelledIconSwitch.args = {
+  icon: <WifiIcon />,
+  innerLabel: 'Enabled',
+}

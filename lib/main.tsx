@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "@stitches/react";
+import './theme/font.css'
 
 export function ExampleButton() {
   return <button>Hello world kejrfkerjgn</button>;
