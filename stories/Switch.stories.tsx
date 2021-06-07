@@ -35,7 +35,10 @@ LabelledIconSwitch.args = {
 }
 
 export const InnerLabelledIconSwitch = Template.bind({})
-LabelledIconSwitch.args = {
+InnerLabelledIconSwitch.args = {
   icon: <WifiIcon />,
-  innerLabel: 'Enabled',
+  innerLabel: {
+    enabled: 'Enabled',
+    disabled: 'Disabled'
+  },
 }

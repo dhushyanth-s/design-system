@@ -11,11 +11,12 @@ export const {
 } = createCss({
   theme: {
     colors: {
-      secondaryColor: '#FEEAAD',
+      secondaryColor: 'rgba(254, 234, 173, 1)',
       primaryColor: '#DA9224',
       textColor: '#787878',
       grey: '#E2E2E2',
       backgroundColor: 'white',
+      buttonBackgroundColor: 'rgba(254, 234, 173, 0.5)',
     },
     shadows: {
       secondaryColor: '#FEEAAD',
