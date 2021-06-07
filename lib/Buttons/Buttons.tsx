@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { styled } from '../theme/theme'
+import { keyframes, styled } from '../theme/theme'
 import { motion } from 'framer-motion'
 
 export interface ButtonProps {
@@ -27,10 +27,22 @@ export function Button(props: ButtonProps) {
   )
 }
 
+const blink = keyframes({
+  '0%': {
+    boxShadow: 'none',
+  },
+  '50%': {
+    boxShadow: '0 0 0 2px $backgroundColor, 0 0 0 4px $primaryColor',
+  },
+  '100%': {
+    boxShadow: 'none',
+  },
+})
+
 const StyledButton = styled(motion.button, {
   borderRadius: 7,
-  background: '#FEEAAD',
-  color: '#DA9224',
+  background: '$buttonBackgroundColor',
+  color: '$primaryColor',
   padding: '10px',
   border: 'none',
   cursor: 'pointer',
@@ -59,16 +71,22 @@ const StyledButton = styled(motion.button, {
       solid: {
         background: '#DA9224',
         color: '#FFFFFF',
-        boxShadow: '0 0 0 2px #DA9224',
+        boxShadow: '0 0 0 2px $primaryColor',
         transition: 'box-shadow 0.3s',
         '&:focus': {
-          boxShadow: '0 0 0 2px $backgroundColor, 0 0 0 3px $primaryColor',
+          boxShadow: '0 0 0 2px $backgroundColor, 0 0 0 4px $primaryColor',
           outline: 'none',
           border: 'none',
         },
       },
       linked: {
-        background: '#FEEAAD44',
+        background: '$secondaryColor',
+        // transition: 'box-shadow 0.3s',
+        '&:focus': {
+          animation: `${blink} 1.5s infinite`,
+          outline: 'none',
+          border: 'none',
+        },
       },
     },
   },

@@ -11,3 +11,6 @@ export type { ButtonProps } from "./Buttons/Buttons";
 
 export { Switch } from "./Switches/Switches";
 export type { SwitchProps } from "./Switches/Switches";
+
+export { Slider } from "./Sliders/Sliders"
+export type { SliderProps } from "./Sliders/Sliders";
