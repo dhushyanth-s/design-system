@@ -65,12 +65,12 @@ const IconContainer = styled('div', {
 })
 
 const Division = styled('div', {
-  backgroundColor: '#000000',
+  backgroundColor: 'white',
   width: 6,
   height: 6,
   borderRadius: '50%',
   position: 'absolute',
-  left: 140,
+  left: 60,
   zIndex: 1,
 })
 

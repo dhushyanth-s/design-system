@@ -20,3 +20,6 @@ export type { AccordionProps, AccordionFragment } from './Accordion/Accordion'
 
 export { ButtonGroups } from './ButtonGroups/ButtonGroups'
 export type { ButtonGroupProps } from './ButtonGroups/ButtonGroups'
+
+export {Checkbox} from './Checkbox/Checkbox'
+export type {CheckboxProps} from './Checkbox/Checkbox'
