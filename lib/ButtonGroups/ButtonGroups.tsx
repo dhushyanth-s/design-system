@@ -5,12 +5,12 @@ import { type } from 'os'
 
 export interface ButtonGroupProps {
   fragments: ButtonFragmentProps[]
+  type?: 'default' | 'bordered' | 'solid' | 'subtle'
 }
 
 interface ButtonFragmentProps {
   label: string
   onClick: () => void
-  type?: 'default' | 'bordered' | 'solid' | 'subtle'
   icon?: ReactElement
 }
 
@@ -25,7 +25,7 @@ export function ButtonGroups(props: ButtonGroupProps) {
       {props.fragments.map((value, index) => (
         <StyledButton
           onClick={value.onClick}
-          type={value.type ?? 'default'}
+          type={props.type ?? 'default'}
           whileHover={{
             scale: 1.05,
             backdropFilter: 'blur(15px)',
@@ -144,6 +144,13 @@ const StyledButton = styled(motion.button, {
       position: 'last',
       css: {
         boxShadow: '-1px 0px 0px 0px $primaryColor',
+      },
+    },
+    {
+      type: 'bordered',
+      position: 'first',
+      css: {
+        boxShadow: '0px 0px 2px 0px $primaryColor',
       },
     },
   ],

@@ -36,6 +36,7 @@
   "dependencies": {
     "@headlessui/react": "^1.2.0",
     "@iconicicons/react": "^1.5.0",
+    "@radix-ui/react-checkbox": "^0.0.15",
     "@radix-ui/react-slider": "^0.0.13",
     "@stitches/react": "^0.1.9",
     "framer-motion": "^4.1.17"

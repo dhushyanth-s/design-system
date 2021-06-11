@@ -19,23 +19,14 @@ Default.args = {
   ],
 }
 
-// export const SolidButton = Template.bind({})
-// SolidButton.args = {
-//   label: 'Hello world 2',
-//   type: 'solid',
-//   icon: <ShoppingCartIcon />,
-// }
+export const Bordered = Template.bind({})
+Bordered.args = {
+  fragments: [
+    { label: 'Hello world 1', icon: <ShoppingCartIcon /> },
+    { label: 'Hello world 2', icon: <ShoppingCartIcon />},
+    { label: 'Hello world ', icon: <ShoppingCartIcon />},
+  ],
+  type: 'bordered'
+}
 
-// export const BorderButton = Template.bind({})
-// BorderButton.args = {
-//   label: 'The other one',
-//   type: 'bordered',
-//   icon: <ShoppingCartIcon />,
-// }
 
-// export const SubtleButton = Template.bind({})
-// SubtleButton.args = {
-//   label: 'The subtle one',
-//   type: 'subtle',
-//   icon: <ShoppingCartIcon />,
-// }
