@@ -15,7 +15,7 @@ Default.args = {
   fragments: [
     { label: 'Hello world 1', icon: <ShoppingCartIcon /> },
     { label: 'Hello world 2', icon: <ShoppingCartIcon /> },
-    { label: 'Hello world 3', icon: <ShoppingCartIcon /> },
+    { label: 'Hello world ', icon: <ShoppingCartIcon /> },
   ],
 }
 

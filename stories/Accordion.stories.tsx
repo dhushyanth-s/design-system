@@ -20,5 +20,9 @@ Default.args = {
       label: 'Label 2',
       content: 'content 2',
     },
+    {
+      label: 'Label 2',
+      content: 'content 2',
+    }
   ],
 }

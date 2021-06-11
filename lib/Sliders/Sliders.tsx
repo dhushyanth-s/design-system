@@ -7,6 +7,8 @@ export interface SliderProps {
   label: string
   onClick: () => void
   type?: 'default' | 'bordered' | 'solid' | 'linked'
+  iconLeft?: ReactElement
+  iconRight?: ReactElement
 }
 
 export function Slider(props: SliderProps) {
@@ -18,15 +20,59 @@ export function Slider(props: SliderProps) {
 
   return (
     <AnimateSharedLayout>
-      <StyledSlider defaultValue={[50]} value={value} onValueChange={setValue}>
-        <StyledTrack>
-          <StyledRange />
-        </StyledTrack>
-        <StyledThumb />
-      </StyledSlider>
+      <Container>
+        <IconContainer>{props.iconLeft}</IconContainer>
+        <StyledSlider
+          defaultValue={[50]}
+          value={value}
+          onValueChange={setValue}
+          // onMouseDown={() => {
+          //   setClicking(true)
+          // }}
+          // onMouseUp={() => {
+          //   setClicking(false)
+          //   setMoving(false)
+          // }}
+          // onMouseMove={() => {
+          //   setMoving(true)
+          // }}
+          // onMouseLeave={() => {
+          //   setMoving(false)
+          // }}
+          // dragging={moving && clicking}
+        >
+          <Division />
+          <StyledTrack>
+            <StyledRange />
+          </StyledTrack>
+          <StyledThumb />
+        </StyledSlider>
+        <IconContainer>{props.iconRight}</IconContainer>
+      </Container>
     </AnimateSharedLayout>
   )
 }
+
+const Container = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+})
+
+const IconContainer = styled('div', {
+  color: '$textColor',
+  display: 'flex',
+  alignItems: 'center',
+})
+
+const Division = styled('div', {
+  backgroundColor: '#000000',
+  width: 6,
+  height: 6,
+  borderRadius: '50%',
+  position: 'absolute',
+  left: 140,
+  zIndex: 1,
+})
 
 const StyledSlider = styled(slider.Root, {
   position: 'relative',
@@ -36,6 +82,9 @@ const StyledSlider = styled(slider.Root, {
   touchAction: 'none',
   height: 16,
   width: 300,
+  '&>span:nth-of-type(2)': {
+    zIndex: 5,
+  },
 })
 
 const StyledTrack = styled(slider.Track, {
@@ -56,9 +105,9 @@ const StyledRange = styled(slider.Range, {
 const StyledThumb = styled(slider.Thumb, {
   $$sliderThumbColor: '#929090',
   display: 'block',
-  // scale: 1,
   width: 20,
   height: 20,
+  zIndex: 5,
   boxShadow: '0px 0px 10px 0.5px $$sliderThumbColor',
   backgroundColor: 'white',
   borderRadius: '20px',
